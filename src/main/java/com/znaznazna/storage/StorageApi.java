@@ -1,7 +1,7 @@
 package com.znaznazna.storage;
 
-public interface StorageApi<T> {
-	
+public interface StorageApi<T> 
+{
 	public int store(T storeObject);
 	
 	public T get(int uid);

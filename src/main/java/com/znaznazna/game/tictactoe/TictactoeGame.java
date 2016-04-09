@@ -1,18 +1,21 @@
 package com.znaznazna.game.tictactoe;
 
-public class TictactoeGame {
-
+public class TictactoeGame 
+{
 	private TictactoeStatus status;
 	
-	public TictactoeGame() {
+	public TictactoeGame() 
+	{
 		status = new TictactoeStatus();
 	}
 	
-	public TictactoeStatus getStatus() {
+	public TictactoeStatus getStatus() 
+	{
 		return status;
 	}
 
-	public void putMove(TictactoeMove move) throws IllegalArgumentException {
+	public void putMove(TictactoeMove move) throws IllegalArgumentException 
+	{
 		
 		TictactoeCellStatus newCellStatus=  move.getCellStatus();
 		int cellRow = move.getCellRow();

@@ -1,6 +1,7 @@
 package com.znaznazna.game.tictactoe;
 
-public enum TictactoeGameStatus {
+public enum TictactoeGameStatus 
+{
 	STATUS_UNDEFINED,
 	STATUS_PLAYER_X_MOVE,
 	STATUS_PLAYER_0_MOVE,

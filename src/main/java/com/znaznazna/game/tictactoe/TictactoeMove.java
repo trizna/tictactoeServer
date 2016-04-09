@@ -1,28 +1,37 @@
 package com.znaznazna.game.tictactoe;
 
-public class TictactoeMove {
-	
+public class TictactoeMove 
+{
 	int cellRow;
 	int cellColum;
 	TictactoeCellStatus cellStatus;
 
-	public int getCellRow() {
+	public int getCellRow() 
+	{
 		return cellRow;
 	}
-	public int getCellColum() {
+	
+	public int getCellColum() 
+	{
 		return cellColum;
 	}
-	public TictactoeCellStatus getCellStatus() {
+	
+	public TictactoeCellStatus getCellStatus() 
+	{
 		return cellStatus;
 	}
-	public void setCellRow(int cellRow) {
+	public void setCellRow(int cellRow) 
+	{
 		this.cellRow = cellRow;
 	}
-	public void setCellColum(int cellColum) {
+	
+	public void setCellColum(int cellColum) 
+	{
 		this.cellColum = cellColum;
 	}
-	public void setCellStatus(TictactoeCellStatus cellStatus) {
+	
+	public void setCellStatus(TictactoeCellStatus cellStatus) 
+	{
 		this.cellStatus = cellStatus;
 	}
-
 }

@@ -29,16 +29,14 @@ public class TictactoeController implements TictactoeSvcApi{
 	}
 	
 	@ResponseStatus(value=HttpStatus.NOT_FOUND, reason="Game not found")  // 404
-    public class GameNotFoundException extends RuntimeException {
-
-		/**
-		 * 
-		 */
+    public class GameNotFoundException extends RuntimeException 
+    {
 		private static final long serialVersionUID = 1L;
     }
 	
 	@ExceptionHandler
-	void handleIllegalArgumentException(IllegalArgumentException e, HttpServletResponse response) throws IOException {
+	void handleIllegalArgumentException(IllegalArgumentException e, HttpServletResponse response) throws IOException 
+	{
 	    response.sendError(HttpStatus.BAD_REQUEST.value(), e.getMessage());
 	}
 	
@@ -62,7 +60,6 @@ public class TictactoeController implements TictactoeSvcApi{
 		}
 		
 		return game.getStatus();
-		
 	}
 	
 	@Override
@@ -76,19 +73,8 @@ public class TictactoeController implements TictactoeSvcApi{
 		
 		game.putMove(move);
 		
-		try {
-			gameStorage.update(uid, game);
-		}
-		catch (IllegalArgumentException e)
-		{
-			
-		}
-		
+		gameStorage.update(uid, game);
 		return game.getStatus();
-		
 	}
-	
-	
-	
 
 }

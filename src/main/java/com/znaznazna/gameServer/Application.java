@@ -35,7 +35,8 @@ import com.znaznazna.game.tictactoe.TictactoeController;
 // Any class in this package that is annotated with @Controller is going to be
 // automatically discovered and connected to the DispatcherServlet.
 @ComponentScan({"com.znaznazna"})
-public class Application extends RepositoryRestMvcConfiguration {
+public class Application extends RepositoryRestMvcConfiguration 
+{
 
 	// The app now requires that you pass the location of the keystore and
 	// the password for your private key that you would like to setup HTTPS

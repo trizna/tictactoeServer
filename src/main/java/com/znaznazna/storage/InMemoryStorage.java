@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InMemoryStorage<T> implements  StorageApi<T>{
-	
+public class InMemoryStorage<T> implements  StorageApi<T>
+{
 	private Map<Integer, T> objectStore;
 	private LinkedList<Integer> keyStore;
 	private int storeCapacity;
@@ -54,6 +54,4 @@ public class InMemoryStorage<T> implements  StorageApi<T>{
 	{
 		return objectStore.put(uid, storeObject);
 	}
-	
-
 }

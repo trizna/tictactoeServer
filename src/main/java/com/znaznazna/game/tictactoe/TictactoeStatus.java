@@ -4,8 +4,7 @@ public class TictactoeStatus {
 	
 	private static final int FIELD_WIDTH = 3;
 	private static final int FIELD_HEIGHT = 3;
-	
-	
+
 	private TictactoeGameStatus gameStatus;
 	private TictactoeCellStatus[][] gameField;
 	
@@ -46,9 +45,8 @@ public class TictactoeStatus {
 	
 	public void setCellStatus(int row, int column, TictactoeCellStatus newStatus) throws IllegalArgumentException
 	{
-		if (
-				   (row < 0) || (column < 0)
-				|| (row >= FIELD_HEIGHT) || (column >= FIELD_WIDTH)
+		if (    (row < 0) || (column < 0)
+			 || (row >= FIELD_HEIGHT) || (column >= FIELD_WIDTH)
 			)
 		{
 			throw new IllegalArgumentException("Invalid cell: " + row + " : " + column);
@@ -131,11 +129,13 @@ public class TictactoeStatus {
 		}
 	}
 	
-	public void setGameStatus(TictactoeGameStatus gameStatus) {
+	public void setGameStatus(TictactoeGameStatus gameStatus) 
+	{
 		this.gameStatus = gameStatus;
 	}
 
-	public void setGameField(TictactoeCellStatus[][] gameField) {
+	public void setGameField(TictactoeCellStatus[][] gameField) 
+	{
 		this.gameField = gameField;
 	}
 }

@@ -1,1 +1,1 @@
-# tictactoeServer
+# simple web server for Tic Tac Toe game
