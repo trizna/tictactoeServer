@@ -2,19 +2,18 @@ package com.znaznazna.game.tictactoe;
 
 public class TictactoeStatus {
 	
-	private static final int FIELD_WIDTH = 3;
-	private static final int FIELD_HEIGHT = 3;
-
+	private static final int FIELD_SIZE = 3;
+	
 	private TictactoeGameStatus gameStatus;
 	private TictactoeCellStatus[][] gameField;
 	
 	public TictactoeStatus()
 	{
 		gameStatus = TictactoeGameStatus.STATUS_PLAYER_X_MOVE;
-		gameField = new TictactoeCellStatus[FIELD_WIDTH][FIELD_HEIGHT];
-		for(int rowIdx = 0; rowIdx < FIELD_WIDTH; rowIdx++)
+		gameField = new TictactoeCellStatus[FIELD_SIZE][FIELD_SIZE];
+		for(int rowIdx = 0; rowIdx < FIELD_SIZE; rowIdx++)
 		{
-			for (int colIdx = 0; colIdx < FIELD_HEIGHT; colIdx++)
+			for (int colIdx = 0; colIdx < FIELD_SIZE; colIdx++)
 			{
 				gameField[colIdx][rowIdx] = TictactoeCellStatus.CELL_EMPTY;
 			}
@@ -35,7 +34,7 @@ public class TictactoeStatus {
 	{
 		if (
 				   (row < 0) || (column < 0)
-				|| (row >= FIELD_HEIGHT) || (column >= FIELD_WIDTH)
+				|| (row >= FIELD_SIZE) || (column >= FIELD_SIZE)
 			)
 		{
 			throw new IllegalArgumentException("Invalid cell");
@@ -46,7 +45,7 @@ public class TictactoeStatus {
 	public void setCellStatus(int row, int column, TictactoeCellStatus newStatus) throws IllegalArgumentException
 	{
 		if (    (row < 0) || (column < 0)
-			 || (row >= FIELD_HEIGHT) || (column >= FIELD_WIDTH)
+			 || (row >= FIELD_SIZE) || (column >= FIELD_SIZE)
 			)
 		{
 			throw new IllegalArgumentException("Invalid cell: " + row + " : " + column);
@@ -83,15 +82,15 @@ public class TictactoeStatus {
 		{
 			linesDone++;
 		}
-		if (((column + row) == FIELD_HEIGHT - 1) && (gameField[2][0] == gameField[1][1]) && (gameField[1][1] == gameField[0][2]))
+		if (((column + row) == FIELD_SIZE - 1) && (gameField[2][0] == gameField[1][1]) && (gameField[1][1] == gameField[0][2]))
 		{
 			linesDone++;
 		}
 		
 		int emptyCells = 0;
-		for (int rowIdx = 0; rowIdx < FIELD_HEIGHT; rowIdx++)
+		for (int rowIdx = 0; rowIdx < FIELD_SIZE; rowIdx++)
 		{
-			for (int colIdx = 0; colIdx < FIELD_HEIGHT; colIdx++)
+			for (int colIdx = 0; colIdx < FIELD_SIZE; colIdx++)
 			{
 				if (gameField[rowIdx][colIdx] == TictactoeCellStatus.CELL_EMPTY)
 				{
